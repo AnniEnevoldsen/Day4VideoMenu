@@ -1,0 +1,11 @@
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.csproj.CoreCompileInputs.cache
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.AssemblyInfoInputs.cache
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.AssemblyInfo.cs
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\bin\Debug\netcoreapp2.1\Day4VideoMenu.deps.json
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\bin\Debug\netcoreapp2.1\Day4VideoMenu.runtimeconfig.json
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\bin\Debug\netcoreapp2.1\Day4VideoMenu.runtimeconfig.dev.json
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\bin\Debug\netcoreapp2.1\Day4VideoMenu.dll
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\bin\Debug\netcoreapp2.1\Day4VideoMenu.pdb
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.dll
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.pdb
+C:\Users\Elisabeth\Documents\VisualStudio Assignments\Crash Course\Day4VideoMenu\obj\Debug\netcoreapp2.1\Day4VideoMenu.csprojAssemblyReference.cache
