@@ -8,21 +8,26 @@ namespace Day4VideoMenu
         static int id = 1;
         static List<Video> videos = new List<Video>();
 
-
         static void Main(string[] args)
         {
-            var cust1 = new Video()
+            var vid1 = new Video()
             {
                 Id = id++,
-                Title = "A",
-                Genre = "B"
+                Title = "Big d",
+                Genre = "Horror, action"
             };
 
-            videos.Add(cust1);
+            var vid2 = new Video()
+            {
+                Id = id++,
+                Title = "lil D",
+                Genre = "Comedy"
+            };
+
+            videos.Add(vid1);
+            videos.Add(vid2);
 
             Console.WriteLine("Hello yeppeo!");
-           // MenuSelection();
-            
 
             string[] menuItems = {
                 "List All Videos",
@@ -34,34 +39,27 @@ namespace Day4VideoMenu
 
             var selection = PrintMenu(menuItems);
 
-            while (selection != 4)
+            while (selection != 5)
             {
-            switch (selection)
-            {
-                case 1:
-                    VideoList();
-                    break;
-                case 2:
-                    AddVideo();
-                    break;
-                case 3:
-                    DeleteVideo();
-                    break;
-                case 4:
-                    UpdateVideo();
-                    break;
-                    case 5:
-                        Console.WriteLine("Exit");
+                switch (selection)
+                {
+                    case 1:
+                        VideoList();
                         break;
-                default:
-                    Console.WriteLine("nop, twy agwain");
-                    break;
+                    case 2:
+                        AddVideo();
+                        break;
+                    case 3:
+                        DeleteVideo();
+                        break;
+                    case 4:
+                        UpdateVideo();
+                        break;
+                    default:
+                        break;
+                }
+                selection = PrintMenu(menuItems);
             }
-               selection = PrintMenu(menuItems);
-            }
-            
-           
-
             Console.ReadLine();
         }
 
@@ -70,12 +68,10 @@ namespace Day4VideoMenu
             Console.WriteLine("");
             for (int i = 0; i < items.Length; i++)
             {
-                Console.WriteLine($"{(i+1)}: {items[i]}");
+                Console.WriteLine($"{(i + 1)}: {items[i]}");
             }
             Console.WriteLine();
             Console.Write("What would you like to do: ");
-
-
 
             int selection;
             while (!int.TryParse(Console.ReadLine(), out selection)
@@ -88,46 +84,80 @@ namespace Day4VideoMenu
             return selection;
         }
 
-        private static void MenuSelection()
-        {
-            Console.WriteLine("Select an option");
-            var s = int.Parse(Console.ReadLine());
-            //show menu
-            
-            Console.ReadLine();
-        }
-
         private static void VideoList()
         {
+            Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("List all videos");
+
+            foreach (var video in videos)
+            {
+                Console.WriteLine($"Id: {video.Id}, Title: {video.Title}, Genre: {video.Genre}");
+            }
+            Console.WriteLine("---------------------------------------------------------------");
         }
 
         private static void UpdateVideo()
         {
+            Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("Update video");
+
+            var ChosenVideo = FindVideoById();
+
+            Console.Write("Update title: ");
+            ChosenVideo.Title = Console.ReadLine();
+
+            Console.Write("Update genre: ");
+            ChosenVideo.Genre = Console.ReadLine();
+
+            Console.WriteLine("---------------------------------------------------------------");
         }
 
         private static void DeleteVideo()
         {
-            Console.WriteLine("Delete video");
+            Console.WriteLine("---------------------------------------------------------------");
+
+            var ChosenVideo = FindVideoById();
+            videos.Remove(ChosenVideo);
+
+            Console.WriteLine("---------------------------------------------------------------");
         }
 
         private static void AddVideo()
         {
-
+            Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("Add video");
 
-            //Console.Write("Type in the title of the video");
-            //var title = Console.ReadLine();
+            Console.Write("Type in the title of the video: ");
+            var title = Console.ReadLine();
 
-            //Console.WriteLine("Input the video's genre");
-            //var genre = Console.ReadLine();
+            Console.Write("Input the video's genre: ");
+            var genre = Console.ReadLine();
 
-            //var video = new Video();
-            //video.Id = id++;
-            //video.Title = title;
-            //video.Genre = genre;
+            var video = new Video();
+            video.Id = id++;
+            video.Title = title;
+            video.Genre = genre;
+            videos.Add(video);
 
+            Console.WriteLine("---------------------------------------------------------------");
+        }
+
+        private static Video FindVideoById()
+        {
+            Console.WriteLine("Type in the videos ID");
+            int id;
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.WriteLine("Try a number instead");
+            }
+            foreach (var video in videos)
+            {
+                if (video.Id == id)
+                {
+                    return video;
+                }
+            }
+            return null;
         }
     }
 }
